@@ -31,21 +31,19 @@
 					<td th:text="${produto.name}"><td>
 					<td th:text="${produto.brand}"><td>
 					<td th:text="${produto.category}"><td>
-					<td th:text="@{RS  + ${  produto.price } }"><td>
-					<td th:text="${produto.createAt.toString().substring(0, 10) }">
+					<td th:text="@{ 'R$'  + ${  produto.price } }"><td>
+					<td th:text="${produto.createdAt.toString().substring(0, 10) }"></td>
 					<td>
 						<img th:src="@{'/images/'+ ${produto.imageFileName}}"
 							alt="..." width="100">
 					</td>
-					</td>
-					<td ><td>
 					<td style="white-space:nowrap">
 						<a class="btn btn-primary btn-sm"
-						 	th:href="@{produtos/edit(id=${produto.id})}">Editar</a>
+						 	th:href="@{produtos/editar(id=${produto.id})}">Editar</a>
 						
-						<a class="btn btn-dangerr btn-sm"
+						<a class="btn btn-danger btn-sm"
 							th:href="@{/produtos/delete(id=${produto.id})}"
-							onclick="return confirm("Você tem certeza?")">Deletar</a>
+							onclick="return confirm('Você tem certeza?')">Deletar</a>
 					</td>
 				</tr>		
 			</tbody>

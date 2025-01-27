@@ -5,20 +5,20 @@ import org.springframework.web.multipart.MultipartFile;
 import jakarta.validation.constraints.*;
 
 public class ProdutoDto {
-	@NotEmpty (message="The name is required")
+	@NotEmpty (message="O nome é obrigatório")
 	private String name;
 	
-	@NotEmpty (message = "The brand is required")
+	@NotEmpty (message = "A marca é obrigatório")
 	private String brand;
 	
-	@NotEmpty (message = "The name is required")
+	@NotEmpty (message = "A categoria é obrigatório")
 	private String category;
 	
 	@Min(0)
 	private double price;
 	
-	@Size (min=10, message = "The description should be at least 10 characters")
-	@Size (max = 2000, message = "The description cannot exceed 2000 characters")
+	@Size (min=10, message = "A descrição deve conter no mínimo 10 caracteres")
+	@Size (max = 2000, message = "A descrição não deve exceder 2000 caracteres")
 	private String description;
 	private MultipartFile imageFile;
 	public String getName() {
